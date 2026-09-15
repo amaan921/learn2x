@@ -1,0 +1,1 @@
+ALTER TABLE `demo_requests` ADD `subject` text DEFAULT 'Mathematics' NOT NULL;
