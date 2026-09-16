@@ -15,6 +15,13 @@
       "when": 1789494005375,
       "tag": "0001_dapper_the_fury",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789579995817,
+      "tag": "0002_huge_thaddeus_ross",
+      "breakpoints": true
     }
   ]
 }
