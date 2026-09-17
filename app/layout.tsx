@@ -1,16 +1,33 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const title = "Online Tuition Classes 6–10 | Maths, Science & English | Learn2X";
+const description = "Learn2X online tuition for CBSE Classes 6–10 in Maths, Science and English. NCERT practice, board revision and fresh Class 9 & 10 batches. Request a demo.";
 export const metadata: Metadata = {
-  title: "Learn2X Classes | Clear concepts. Confident learners.",
-  description: "Maths, Science, and English tuition for Classes 6–10 with fresh batches for Classes 9 and 10. Contact Learn2X at learn2xclasses@gmail.com or +91 9310429249 and request a demo.",
-  other: {
-    "codex-preview": "development",
-  },
-  icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-  },
+  metadataBase: new URL("https://learn2x.in"),
+  title,
+  description,
+  alternates: {canonical: "/"},
+  openGraph: {title, description, url:"https://learn2x.in", siteName:"Learn2X Classes", type:"website", locale:"en_IN"},
+  twitter: {card:"summary",title,description},
+  icons: {icon:"/favicon.svg",shortcut:"/favicon.svg"},
+};
+const organization = {
+  "@context":"https://schema.org",
+  "@type":"EducationalOrganization",
+  "name":"Learn2X Classes",
+  "url":"https://learn2x.in",
+  "description":description,
+  "email":"learn2xclasses@gmail.com",
+  "telephone":"+91 9310429249",
+  "hasOfferCatalog":{
+    "@type":"OfferCatalog",
+    "name":"Online tuition for Classes 6–10",
+    "itemListElement":["Mathematics","Science","English"].map(name=>({
+      "@type":"Offer",
+      "itemOffered":{"@type":"Service","name":name+" online tuition for Classes 6–10","serviceType":"Online tuition","provider":{"@type":"EducationalOrganization","name":"Learn2X Classes"}}
+    }))
+  }
 };
 
 export default function RootLayout({
@@ -20,7 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organization).replace(/</g,"\\u003c")}}/>{children}</body>
     </html>
   );
 }
