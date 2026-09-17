@@ -1,3 +1,4 @@
+export const revalidate=3600;
 import type {Metadata} from 'next';
 import ClassTuition from '../class-tuition';
 const title="Class 9 Online Tuition | Maths, Science & English | Learn 2X";

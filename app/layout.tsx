@@ -18,6 +18,7 @@ const organization = {
   "name":"Learn2X Classes",
   "alternateName":["Learn 2X","Learn2X","Learn 2X Classes"],
   "@id":"https://learn2x.in/#organization",
+  "logo":"https://learn2x.in/learn2x-logo.webp",
   "url":"https://learn2x.in",
   "description":description,
   "email":"learn2xclasses@gmail.com",
