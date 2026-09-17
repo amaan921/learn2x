@@ -153,3 +153,11 @@ body {
 .request-privacy{font-size:14px;line-height:1.6;margin:6px 0 18px;color:#596761}
 .request-privacy button{text-decoration:underline;color:#254fe5;font-weight:600}
 @media(max-width:600px){.image-caption{left:16px;right:16px;bottom:18px;padding:16px}.image-caption>strong{font-size:28px}.hero h1{font-size:40px;letter-spacing:-1.5px}}
+
+/* Direct WhatsApp contact; stays clear of mobile safe areas. */
+.whatsapp-bubble{position:fixed;right:24px;bottom:calc(24px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:14px 20px;border:2px solid #fff;border-radius:999px;background:#087c42;color:#fff;font-size:15px;font-weight:700;box-shadow:0 5px 22px #123e3033;transition:background .2s,transform .2s}
+.whatsapp-bubble:hover{background:#066535;transform:translateY(-2px)}
+.whatsapp-bubble:focus-visible{outline:3px solid #254fe5;outline-offset:4px}
+footer{padding-bottom:100px}
+@media(max-width:600px){.whatsapp-bubble{right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:58px;height:58px;padding:0}.whatsapp-bubble span{display:none}}
+@media(prefers-reduced-motion:reduce){.whatsapp-bubble{transition:none}.whatsapp-bubble:hover{transform:none}}
