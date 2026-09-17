@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const title = "Online Tuition Classes 6–10 | Maths, Science & English | Learn2X";
-const description = "Learn2X online tuition for CBSE Classes 6–10 in Maths, Science and English. NCERT practice, board revision and fresh Class 9 & 10 batches. Request a demo.";
+const title = "Learn 2X | Online Tuition for Classes 6–10 | Learn2X";
+const description = "Learn 2X offers CBSE online tuition for Classes 6–10 in Maths, Science and English. Explore Class 9 and Class 10 online tuition and request a demo.";
 export const metadata: Metadata = {
   metadataBase: new URL("https://learn2x.in"),
   title,
@@ -16,6 +16,8 @@ const organization = {
   "@context":"https://schema.org",
   "@type":"EducationalOrganization",
   "name":"Learn2X Classes",
+  "alternateName":["Learn 2X","Learn2X","Learn 2X Classes"],
+  "@id":"https://learn2x.in/#organization",
   "url":"https://learn2x.in",
   "description":description,
   "email":"learn2xclasses@gmail.com",
@@ -37,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(organization).replace(/</g,"\\u003c")}}/>{children}</body>
+      <body className="antialiased"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify([organization,{"@context":"https://schema.org","@type":"WebSite","@id":"https://learn2x.in/#website","name":"Learn2X","alternateName":["Learn 2X","Learn2X Classes","Learn 2X Classes"],"url":"https://learn2x.in/"}]).replace(/</g,"\\u003c")}}/>{children}</body>
     </html>
   );
 }
